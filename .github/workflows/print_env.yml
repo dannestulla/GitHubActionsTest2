@@ -17,6 +17,6 @@ jobs:
         id: fail-step
         run: exit 1
       - name: Upload error
-        if: steps.fail-step.outcome == 'failure'
+        if: failure() && steps.fail-step.outcome == 'failure'
         run: echo " ${{steps.fail-step}} "
   
