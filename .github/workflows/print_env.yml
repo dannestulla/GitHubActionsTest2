@@ -1,9 +1,16 @@
 name: Print Env
 on: push
+env:
+  WORKFLOW_VAR: "workflow variable"
 jobs: 
   print_enviroment:
+    env: |
+      JOB_VAR_1: "job var 1"
+      JOB_VAR_2: "job var 2"
     environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Print environment secret
-        run: echo "enviroment ${{ vars.MY_VARIABLE }}, secret ${{ secrets.MY_SECRET }}"
+        run: |
+          echo "enviroment ${{ vars.MY_VARIABLE }}, secret ${{ secrets.MY_SECRET }}"
+          echo "workflow variable $WORKFLOW_VAR , jobs var $JOB_VAR_1, $JOB_VAR2"
