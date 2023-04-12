@@ -5,5 +5,5 @@ jobs:
     enviroment: testing
     runs-on: ubuntu-latest
     steps:
-      name: Print environment secret
-      run: echo "enviroment $MY_VARIABLE"
+      - name: Print environment secret
+        run: echo "enviroment $MY_VARIABLE"
