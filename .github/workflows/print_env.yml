@@ -1,9 +1,9 @@
 name: Print Env
-on: push
+on: workflow_dispatch
 jobs: 
   print_enviroment:
     environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Print environment secret
-        run: echo "enviroment $MY_VARIABLE"
+        run: echo "enviroment ${{ env.MY_VARIABLE }}"
