@@ -2,7 +2,7 @@ name: Print Env
 on: push
 jobs: 
   print_enviroment:
-    enviroment: testing
+    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Print environment secret
