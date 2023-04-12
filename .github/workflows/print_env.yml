@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print environment secret
-        run: echo "enviroment $NAME, $GITHUB.MY_VARIABLE"
+        run: echo "enviroment ${{ env.MY_VARIABLE }}"
