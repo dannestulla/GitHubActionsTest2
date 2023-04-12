@@ -13,3 +13,10 @@ jobs:
         run: |
           echo "enviroment ${{ vars.MY_VARIABLE }}, secret ${{ secrets.MY_SECRET }}"
           echo "workflow variable $WORKFLOW_VAR , jobs var $JOB_VAR_1"
+      - name: Fail a step
+        id: fail-step
+        run: exit 1
+      - name: Upload error
+        if: steps.fail-step.outcome == 'failure'
+        run: echo " ${{steps.fail-step}} "
+  
