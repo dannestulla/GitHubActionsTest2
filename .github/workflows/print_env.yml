@@ -1,7 +1,7 @@
 name: Print Env
 on: push
 env:
-  WORKFLOW_VAR: "workflow variable"
+  WORKFLOW_VAR: "workflow_variable"
 jobs: 
   print_enviroment:
     env: 
